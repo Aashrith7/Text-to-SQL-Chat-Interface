@@ -31,10 +31,11 @@ Under the hood there are **two chained LLM steps**:
 ```mermaid
 flowchart LR
     U[User Question] -->|Streamlit| A[SQL Generation Prompt]
-    A -->|LLM (OpenAI/Groq)| Q[(SQL)]
-    Q -->|SQLAlchemy| DB[(MySQL)]
+    A -->|LLM (OpenAI or Groq)| Q[SQL Query]
+    Q -->|SQLAlchemy| DB[MySQL Database]
     DB --> R[Tabular Result]
     R --> B[Answer Synthesis Prompt]
     Q --> B
-    B -->|LLM| NL[Final Natural-Language Answer]
+    B -->|LLM| NL[Natural Language Answer]
     NL -->|Streamlit| U
+
