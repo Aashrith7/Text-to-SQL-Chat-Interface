@@ -61,10 +61,13 @@ and writes a short, natural explanation of the answer — for example:
 
 ```mermaid
 flowchart LR
-    A[User Question] -->|Streamlit| B[SQL Generation Prompt]
-    B -->|LLM (GPT-4 or Mistral)| C[Generated SQL Query]
-    C -->|SQLAlchemy| D[MySQL Database]
-    D --> E[SQL Result]
-    E --> F[Answer Synthesis Prompt]
-    F -->|LLM| G[Natural Language Answer]
-    G -->|Displayed via Streamlit| A
+    U[User Question] --> S[Streamlit UI]
+    S --> G[SQL Generation Prompt]
+    G --> L[LLM]
+    L --> Q[SQL Query]
+    Q --> D[MySQL Database]
+    D --> R[SQL Result]
+    R --> A[Answer Synthesis Prompt]
+    A --> L2[LLM]
+    L2 --> N[Natural Language Answer]
+    N --> S
