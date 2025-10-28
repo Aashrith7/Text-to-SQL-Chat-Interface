@@ -1,0 +1,8 @@
+python-dotenv>=1.0.1
+streamlit>=1.38.0
+langchain-core>=0.2.40
+langchain-community>=0.2.14
+langchain-openai>=0.1.22
+langchain-groq>=0.1.4
+sqlalchemy>=2.0.35
+mysql-connector-python>=9.0.0
